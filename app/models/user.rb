@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   enum role: [:user, :admin]
   has_many :tasks
+
+  validates :name, presence: true, length: { maximum: 15 }
+  validates :last_name, presence: true, length: { maximum: 15 }
+  validates :nick_name, presence: true, length: { maximum: 15 }
 end

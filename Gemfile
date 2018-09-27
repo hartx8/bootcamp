@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'devise' #authintification
 gem 'pundit' # authorization
 gem 'carrierwave' # avatar for user
+gem 'draper'
 #gem 'omniauth'
 
 #gem 'omniauth-twitter'
