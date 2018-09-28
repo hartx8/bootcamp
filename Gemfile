@@ -7,6 +7,8 @@ gem 'devise' #authintification
 gem 'pundit' # authorization
 gem 'carrierwave' # avatar for user
 gem 'draper'
+gem 'sidekiq', '~> 5.2', '>= 5.2.2'
+gem 'redis-rails', '~> 5.0', '>= 5.0.2'
 #gem 'omniauth'
 
 #gem 'omniauth-twitter'

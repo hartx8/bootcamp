@@ -1,0 +1,12 @@
+<% if current_user.id == @user.id %>
+	<h4> My account: </h4>
+	<% else %>
+	<h4> User info: </h4>
+<%end%>
+<p> id: <%= @user.id %> </p>
+<p> Nick: <%= @user.nick_name %> </p>
+<p> First name: <%= @user.name %> , Last name <%= @user.last_name %> <p> 
+<p> Balance: <%= @user.balance %> </p>
+<% if current_user.id == @user.id %>
+	<li><%=link_to 'Edit account', edit_user_registration_path%></li>
+<%end%>

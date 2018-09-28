@@ -2,7 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
+<i>(leave blank if you don't want to change field)</i>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -12,8 +12,23 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+   <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name, autocomplete: "last_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nick_name %><br/>
+    <%= f.text_field :nick_name, autocomplete: "nick_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br/>
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />

@@ -1,0 +1,10 @@
+<p class='center'> Hello! Here your can see information about this task! </p>
+<br>
+<ol>
+<p> Description: <br> <%= @task.description %>
+<p> We need <%= @task.goal %> likes
+<br> And already have <%= @task.completed %> </p>
+</ol>
+<% if !current_user.nil? %>
+  <li ><%= link_to 'Perform this Task' , @task.url_to %> </li>
+  <% end %>

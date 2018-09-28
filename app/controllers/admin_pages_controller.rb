@@ -7,9 +7,9 @@ class AdminPagesController < ApplicationController
 
 	private
 
-	def admin_check!
-	   unless current_user and current_user.admin?
-	   	redirect_to root_path
-	   end
-	end
+	# def admin_check!
+	#    unless current_user and current_user.admin?
+	#    	redirect_to root_path
+	#    end
+	# end
 end
