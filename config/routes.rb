@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   get '/admin_pages/admin_main', to: 'admin_pages#admin_main'
   get '/users/index', to: 'users#index'
   get '/users/:id', to: 'users#user_info', as: 'users'
-  get '/tasks/new_task', to: 'tasks#new_task'
+  get '/users/edit/:id', to: 'users#edit', as: 'edit_user'
+  patch '/user/edit/:id/', to: 'user#update'
+  get '/tasks/new', to: 'tasks#new'
   get '/tasks/:id', to: 'tasks#task_info', as: 'tasks'
   get '/pages/help', to: 'pages#help'
-
+  post '/tasks/new', to: 'tasks#create' 
 
    #root 'pages#main'
   # get '/register', to: 'devise/registrations#new'

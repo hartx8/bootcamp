@@ -1,8 +1,20 @@
 class Task < ApplicationRecord
   belongs_to :user
-  enum type: [:like, :subscribe, :comment]
-  validates :url_to, presence: true, length: { maximum: 55 }
+  enum task_type: [:like, :subscribe, :comment]
+  enum status: [:active,:finished,:rejected]
+  validates :task_url, presence: true, length: { maximum: 55 }
   validates :description, presence: true, length: { maximum: 55 } 
   validates :goal, presence: true
-  validates :url_to, presence: true
+  validates :task_url, presence: true
+  validate :enough_balance?
+
+  private
+
+  def enough_balance?
+  	if user.balance >= user.tasks.where(status: "active").sum(:amount).to_f
+  	  true
+  	else
+  	  errors.add(:amount, "Not enough money, silly boy")
+  	end
+  end
 end

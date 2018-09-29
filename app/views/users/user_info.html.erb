@@ -5,8 +5,10 @@
 <%end%>
 <p> id: <%= @user.id %> </p>
 <p> Nick: <%= @user.nick_name %> </p>
-<p> First name: <%= @user.name %> , Last name <%= @user.last_name %> <p> 
+<p> First name: <%= @user.first_name %> , Last name <%= @user.last_name %> <p> 
 <p> Balance: <%= @user.balance %> </p>
 <% if current_user.id == @user.id %>
 	<li><%=link_to 'Edit account', edit_user_registration_path%></li>
+	<%elsif current_user.admin?%>
+	<li><%=link_to 'Edit user account', edit_user_path%></li>
 <%end%>

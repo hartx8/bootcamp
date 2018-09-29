@@ -1,8 +1,8 @@
 <h3> This is all tasks for today!</h3>
 <ol>
 <% @tasks.each do |task| %>
-    <li>
-        <%= link_to task.description, tasks_path(task.id) %>
+       Description: <%= link_to task.description, tasks_path(task.id) %> <br>
+        Budget: <%= task.amount%> $ <br><br>
      </ul>
 <% end %>
 </ol>

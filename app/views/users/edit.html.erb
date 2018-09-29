@@ -1,0 +1,7 @@
+<p>You are Editing user: <%= @user.nick_name %> </p>
+<%= form_for :user, url: {action: "update"}, method: :patch do |f| %> <br> 
+	New balance: <%= f.text_field :balance %> <br>
+	New role: <%= f.text_field :role %> <br>
+	New nick name: <%= f.text_field :nick_name %> <br>
+	<%= f.submit %>
+<%end%>

@@ -5,11 +5,23 @@ class TasksController < ApplicationController
 	  @task= Task.find(params[:id])
 	end
 
-	def new_task
+	def new
 	end
 
 	def create
-		Task.new(description: params[:description], goal: params[:goal], task_type: params[:task_type], url_to: params[:url_to])
+		task = current_user.tasks.create(task_params)
+		redirect_to root_path
+	end
+
+	private
+
+	def task_params
+	    params.require(:task).permit(:description, :goal, :task_type, :task_url, :amount)
 	end
 
 end
+
+
+
+#Remember
+ #render json: {errors: task.errors}
