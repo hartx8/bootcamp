@@ -9,7 +9,8 @@
       <li><% link_to 'Home', root_path %></li>
       <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
-          <li><%= link_to current_user.decorate.name, users_path(current_user.id) %></li><br> Balance: <%= current_user.balance%> $
+          <li><%= link_to current_user.decorate.name, users_path(current_user.id) %></li><br> Balance: <%= current_user.balance%> $ <br>
+          Avalible: <%=current_user.balance - current_user.tasks.where(status: "active").sum(:amount)%> $
           <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
           <% if current_user.admin? %>
 	        <li><%= link_to 'Admin Room', admin_pages_admin_main_path %></li>
@@ -22,3 +23,4 @@
     </ul>
   </div>
 </nav>
+

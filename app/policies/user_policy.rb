@@ -4,7 +4,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def user_info?
- 	true
+ 	  user_admin? or user
   end
 
   def update?

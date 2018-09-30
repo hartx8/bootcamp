@@ -5,7 +5,12 @@ class TasksController < ApplicationController
 	  @task= Task.find(params[:id])
 	end
 
-	def new
+	def perform
+	  User.find(current_user.id).user_tasks.create(task_id: params[:id])
+	  redirect_to "https://twitter.com/#{Task.find(params[:id]).task_url}"
+	end
+
+	def new # view, GET
 	end
 
 	def create

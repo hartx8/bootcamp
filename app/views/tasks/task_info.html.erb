@@ -6,5 +6,5 @@
 <br> And already have <%= @task.completed %> </p>
 </ol>
 <% if current_user %>
-  <li ><%= link_to 'Perform this Task' , @task.task_url %> </li>
+  <li ><%= link_to 'Perform this Task' , perform_task_path(@task.id), method: :post %> </li>
   <% end %>

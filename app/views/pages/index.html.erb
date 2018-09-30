@@ -1,8 +1,17 @@
-<h3> This is all tasks for today!</h3>
+<h4> This is all tasks for today!</h4> 
+ <%= form_for :task, url: '#', method: :get do |f| %>
+	Sort by:<%= f.select(:task_type, [ 'like', 'subscribe' ]) %>
+	<%= f.submit 'Find'%>
+	<%end%> <br>
 <ol>
-<% @tasks.each do |task| %>
-       Description: <%= link_to task.description, tasks_path(task.id) %> <br>
-        Budget: <%= task.amount%> $ <br><br>
-     </ul>
+<% if @tasks %>
+	<% @tasks.each do |task| %>
+	       Description: <%= link_to task.description, tasks_path(task.id) %> <br>
+	       Type: <%= task.task_type %>'s <br>
+	        Budget: <%= task.amount%> $ <br><br>
+	     </ul>
+	<% end %>
+<% else %>
+<p> Good job! That's all for this moment, see You later! </p>
 <% end %>
 </ol>

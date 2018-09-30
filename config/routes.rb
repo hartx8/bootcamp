@@ -9,14 +9,18 @@ Rails.application.routes.draw do
  # resources :tasks, only: [:create, :task_info] # HMMMMM>???
 
   get '/admin_pages/admin_main', to: 'admin_pages#admin_main'
+
   get '/users/index', to: 'users#index'
   get '/users/:id', to: 'users#user_info', as: 'users'
   get '/users/edit/:id', to: 'users#edit', as: 'edit_user'
-  patch '/user/edit/:id/', to: 'user#update'
+  patch '/users/edit/:id/', to: 'users#update', as: 'user_update'
+
   get '/tasks/new', to: 'tasks#new'
   get '/tasks/:id', to: 'tasks#task_info', as: 'tasks'
-  get '/pages/help', to: 'pages#help'
   post '/tasks/new', to: 'tasks#create' 
+  post '/tasks/:id' , to: 'tasks#perform', as: 'perform_task'
+
+  get '/pages/help', to: 'pages#help'
 
    #root 'pages#main'
   # get '/register', to: 'devise/registrations#new'
