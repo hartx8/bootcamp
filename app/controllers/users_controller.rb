@@ -1,24 +1,35 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-	before_action :admin_check!, except: [:user_info]
+	before_action :admin_check!, except: [:add_balance]
   
+
   def index
   	@users = User.all
   end
 
-  def delete
-  	#User.delete.where(params)
+  def user_info
+     @user = user
   end
 
-  def user_info
-     @user = User.find(params[:id])
+  def edit # get
+     @user = user
+  end
+
+  def update # patch
+     user.update(user_params)
   end
 
   private
 
+  def user
+    User.find(params[:id])
+  end
+
+  def user_params
+     params.require(:user).permit(:first_name, :nick_name, :last_name, :role, :balance)
+  end
+
    def admin_check!
-	 unless current_user and current_user.admin?
-    	redirect_to root_path
-     end
+     authorize current_user
    end
 end

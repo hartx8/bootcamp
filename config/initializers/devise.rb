@@ -152,7 +152,7 @@ Devise.setup do |config|
   # config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
-  config.expire_all_remember_me_on_sign_out = true
+  config.expire_all_remember_me_on_sign_out = false
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
@@ -257,7 +257,6 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

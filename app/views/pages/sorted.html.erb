@@ -1,6 +1,4 @@
-<h4> This is all tasks for today!</h4> 
-<li><%= link_to 'Likes', sorted_path('like')%></li>
-<li><%= link_to 'Subscribes', sorted_path('subscribe')%></li><br>
+<h4> Here is all the results: </h4> 
 <ol>
 <% if @tasks %>
 	<% @tasks.each do |task| %>
@@ -9,6 +7,6 @@
 	       Budget: <%= task.amount%> $ <br><br>
 	<% end %>
 <% else %>
-<p> Good job! That's all for this moment, see You later! </p>
+<p> You make them all! </p>
 <% end %>
 </ol>

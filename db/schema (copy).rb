@@ -10,47 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_101923) do
-
-  create_table "reports", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "text"
-    t.string "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2018_09_28_165211) do
+    create_atable 'users_tasks' do |t|
+        user_id
+        task_id
+        status enum
+        id
+    end
+    
 
   create_table "tasks", force: :cascade do |t|
-    t.string "description", limit: 60, null: false
-    t.integer "task_type", null: false
-    t.integer "goal", null: false
+    t.string "description", null: false
+    t.integer "goal"
     t.integer "completed", default: 0
-    t.decimal "amount", null: false
-    t.integer "status", default: 0
-    t.integer "user_id", null: false
-    t.string "task_url", null: false
+    t.boolean "status", default: true
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "user_tasks", force: :cascade do |t|
-    t.integer "task_id"
-    t.integer "user_id"
-    t.integer "status", default: 0
+    t.string "url_to"
+    t.integer "task_type"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.decimal "balance", default: "0.0"
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "nick_name"
-    t.integer "role", default: 0
-    t.string "avatar", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "done_tasks", default: 0
+    t.integer "balance", default: 0
+    t.string "name"
+    t.string "avatar"
+    t.integer "role", default: 0
+    t.string "last_name"
+    t.string "nick_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

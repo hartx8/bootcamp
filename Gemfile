@@ -6,12 +6,10 @@ ruby '2.5.1'
 gem 'devise' #authintification
 gem 'pundit' # authorization
 gem 'carrierwave' # avatar for user
-gem 'draper'
+gem 'draper' # decorators
+#gem 'unobtrusive_flash', '>=3' # warnings
 gem 'sidekiq', '~> 5.2', '>= 5.2.2'
 gem 'redis-rails', '~> 5.0', '>= 5.0.2'
-#gem 'omniauth'
-
-#gem 'omniauth-twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -48,7 +46,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
 end
 
 group :development do

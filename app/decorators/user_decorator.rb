@@ -1,7 +1,7 @@
 class UserDecorator < Draper::Decorator
   delegate_all
 	def name
-		nick_name.presence || "#{user.name} {last_name}"
+		nick_name.presence || "#{user.first_name} {last_name}"
 	end
 	  # Define presentation-specific methods here. Helpers are accessed through
 	  # `helpers` (aka `h`). You can override attributes, for example:
@@ -13,8 +13,8 @@ class UserDecorator < Draper::Decorator
 	  #   end
 
 	def nick_name
-		p 'User:'
-		p object
-		object.nick_name.upcase
+		#p 'User:'
+		#p object
+		object.nick_name.capitalize
 	end
 end

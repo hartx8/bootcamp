@@ -2,9 +2,9 @@
 <br>
 <ol>
 <p> Description: <br> <%= @task.description %>
-<p> We need <%= @task.goal %> likes
+<p> We need <%= @task.goal %> <%= @task.task_type %>'s
 <br> And already have <%= @task.completed %> </p>
 </ol>
-<% if !current_user.nil? %>
-  <li ><%= link_to 'Perform this Task' , @task.url_to %> </li>
+<% if current_user %>
+  <li ><%= link_to 'Perform this Task' , perform_task_path(@task.id), method: :post %> </li>
   <% end %>
