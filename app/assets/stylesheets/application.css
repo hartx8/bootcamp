@@ -14,7 +14,7 @@
  *= require_self
  */
  .logo { align: left; }
- .logo_text { self.align: left; }
+ .logo_text { align: left; }
  .footer {
     position: fixed;
     left: 0;
