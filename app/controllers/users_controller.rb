@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-	before_action :admin_check!
+	before_action :admin_check!, except: [:add_balance]
   
 
   def index

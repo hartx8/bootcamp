@@ -1,0 +1,12 @@
+<h4>All report's, ser. Will you answer on them?</h4>
+<% if @reports %> 
+	<%= @reports.each do |report| %>
+		Rat: <%= report.user.nick_name %><br>
+		Text: <%= report.text %><br><br>
+	<%end%>
+<% else %>
+<p> ..no reports </p>
+<%end%>
+
+
+

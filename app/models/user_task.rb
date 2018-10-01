@@ -5,9 +5,4 @@ class UserTask < ApplicationRecord
 
 	validates_uniqueness_of :task, scope: :user
 
-	private
-
-	def already_perform?
-		
-	end
 end

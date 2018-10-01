@@ -1,7 +1,7 @@
 <h4> Enter information about your Task and then Confirm </h4>
 <%= form_for :task do |f| %> <br>
 I need: <%= f.text_field :goal %> <%= f.select(:task_type, [ 'like', 'subscribe' ]) %>'s <br>
-Link: 		 <%= f.text_field :task_url %> <br>
+Link: twitter.com/<%= f.text_field :task_url %> <br>
 Budget:      <%=f.text_field :amount %> <br>
 Description: <%= f.text_area :description %> <br>
 <%= f.submit %>

@@ -15,6 +15,6 @@ class UserDecorator < Draper::Decorator
 	def nick_name
 		#p 'User:'
 		#p object
-		object.nick_name.upcase
+		object.nick_name.capitalize
 	end
 end

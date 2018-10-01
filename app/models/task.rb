@@ -8,6 +8,7 @@ class Task < ApplicationRecord
   validates :goal, presence: true
   validates :goal, numericality: {greater_than_or_equal_to: 0}
   validates :task_url, presence: true
+  validates :amount, numericality: {greater_than_or_equal_to: 0}
   validate  :enough_balance?
 
   private

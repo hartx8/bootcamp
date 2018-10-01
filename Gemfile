@@ -10,8 +10,6 @@ gem 'draper' # decorators
 #gem 'unobtrusive_flash', '>=3' # warnings
 gem 'sidekiq', '~> 5.2', '>= 5.2.2'
 gem 'redis-rails', '~> 5.0', '>= 5.0.2'
-gem 'omniauth-twitter'
-#gem 'twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
