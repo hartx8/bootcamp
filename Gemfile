@@ -11,7 +11,7 @@ gem 'draper', '~> 3.0', '>= 3.0.1' # decorators
 
 gem "paperclip", "~> 6.0.0" # avatars
 
-gem 'sqlite3'
+#gem 'sqlite3'
 #gem 'unobtrusive_flash', '>=3' # warnings
 gem 'rails-controller-testing'
 
@@ -26,7 +26,7 @@ gem 'rails', '~> 5.2.1'
 
 
 
-#gem 'pg'- I AM HEREEE
+gem 'pg'#- I AM HEREEE
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 
