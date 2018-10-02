@@ -2,7 +2,19 @@
 <%= form_for :report do |f| %> <br>
 Can i help you? <%= f.text_field :text %> <br>
 <%= f.submit 'Done' %>
-<%end%>
+<% end %>
+<p>______________________</p>
+
+<p>Answers to you:</p>
+<% if current_user %>
+	<%= current_user.reports.where.not(answer: nil).each do |report| %>
+		Your question: <%= report.text %> <br>
+		Answer: <%= report.answer %> <br><br>
+	<% end %>
+<% else %>
+	<p> ..empty </p>
+<% end %>
+
 
 
 

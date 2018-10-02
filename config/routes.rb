@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/report/index', to: 'reports#index'
   get '/report', to: 'reports#new'
-  patch '/report', to: 'reports#update', as: 'report_answer'
+  patch '/report:id', to: 'reports#update', as: 'report_answer'
   post '/report', to: 'reports#create'
   get '/admin_pages/admin_main', to: 'admin_pages#admin_main'
 
