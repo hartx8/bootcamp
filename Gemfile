@@ -7,8 +7,6 @@ gem 'devise', '~> 4.5' #authintification
 
 gem 'pundit', '~> 2.0' # authorization
 
-gem 'carrierwave' # avatar for user
-
 gem 'draper', '~> 3.0', '>= 3.0.1' # decorators
 
 gem 'sqlite3'
