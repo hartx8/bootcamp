@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :tasks
   has_many :user_tasks
   has_many :reports
+  #has_one_attached :avatar, styles: { thumb: "100x100>" }
+
+  #validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   validates :first_name, :last_name, :nick_name, presence: true
   validates :first_name, :last_name, :nick_name, length: { maximum: 15 }

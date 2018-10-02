@@ -9,6 +9,8 @@ gem 'pundit', '~> 2.0' # authorization
 
 gem 'draper', '~> 3.0', '>= 3.0.1' # decorators
 
+gem "paperclip", "~> 6.0.0" # avatars
+
 gem 'sqlite3'
 #gem 'unobtrusive_flash', '>=3' # warnings
 gem 'rails-controller-testing'

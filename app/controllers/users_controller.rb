@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-     params.require(:user).permit(:first_name, :nick_name, :last_name, :role, :balance)
+     params.require(:user).permit(:first_name, :nick_name, :last_name, :role, :balance, :avatar)
   end
 
    def admin_check!

@@ -12,6 +12,10 @@ class UserDecorator < Draper::Decorator
 	  #     end
 	  #   end
 
+	  def avalible
+	  	 balance - tasks.where(status: "active").sum(:amount)
+	  end
+
 	def nick_name
 		#p 'User:'
 		#p object
